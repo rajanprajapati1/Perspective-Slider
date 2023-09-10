@@ -1,0 +1,60 @@
+!<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="" />
+  </head>
+  <style>
+    .slider {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+    .main {
+      width: 30%;
+      border: 1px solid black;
+      transition: transform 15000s ease-in-out; /* Added transition for smooth scaling effect */
+    }
+    .scale-btn {
+      transform: scale(1.5);
+      animation: flip 0.8s ease; /* Apply the flip animation */
+    }
+
+    @keyframes flip {
+      0% {
+        transform: perspective(500px) rotateY(15deg);
+      }
+      100% {
+        transform: perspective(500px) rotateY(360deg);
+      }
+    }
+    .scale-btn-reve {
+      transform: scale(1.5);
+      animation: flipp 0.8s ease;
+    }
+
+    @keyframes flipp {
+      0% {
+        transform: perspective(500px) rotateY(360deg);
+      }
+      100% {
+        transform: perspective(500px) rotateY(0);
+        scale: 0;
+      }
+    }
+  </style>
+  <body>
+    <div class="warapper">
+      <div class="slider">
+        <button class="btn" onclick="left()">Left</button>
+        <div class="main"></div>
+        <button class="btn" onclick="right()">right</button>
+      </div>
+    </div>
+  </body>
+  <script src="script.js"></script>
+</html>
